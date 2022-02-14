@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;600&family=Poppins:wght@100;300;400;500;700&family=Roboto:wght@100;400;700&family=Source+Code+Pro:ital,wght@0,200;0,400;0,700;1,200&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+
+    overflow: hidden;
+    height: 100vh;
+}
+
+.seccion-2 {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: wheat;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.seccion-2::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 140%;
+    background: linear-gradient(#00CCFF, #D400D4);
+    animation: animate 4s linear infinite;
+}
+
+.seccion-2::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background: black;
+    border-radius: 16px;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.img-heart {
+    position: relative;
+    width: 200px;
+    color: #fff;
+    font-size: 10em;
+    z-index: 10;
+}
+
+span {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    background-image: url(img/heart-icon-red.jpg);
+    background-size: cover;
+    animation: heart 5s linear infinite;
+}
+
+@keyframes heart {
+    0% {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -1500%);
+        opacity: 0;
+    }
+}
+
+.seccion-1 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+.seccion-1 .show {
+    display: none;
+}
+
+.div-btn-click {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.btn-click {
+    margin: 10px;
+    padding: 10px;
+    background: #4070F4;
+    padding: 12px 20px;
+    color: white;
+    border-radius: 6px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-click:hover {
+    background: #275DF1;
+}
+
+.popup-outer {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.4);
+    transform: scale(1.2);
+    transition: opacity 0.2s 0s ease-in-out,
+                transform 0.2s 0s ease-in-out;
+    z-index: 10;
+}
+
+.show .popup-outer {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+.popup-box .profile-text {
+    display: flex;
+    align-items: center;
+}
+
+.popup-box {
+    position: relative;
+    padding: 30px;
+    max-width: 380px;
+    width: 100%;
+    background: #fff;
+    border-radius: 12px;
+}
+
+.popup-box .fa-xmark{
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 24px;
+    color: #B4B4B4;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.popup-box .fa-xmark:hover {
+    color: #333;
+}
+
+.popup-box img {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-text .text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+.profile-text .text .name {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.popup-box .button {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+    margin-left: 8px;
+}
+
+.popup-box .button button {
+    outline: none;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: #6F93F6;
+    margin-left: 8px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button button.cancel {
+    background-color: #4070F4;
+}
+
+.button button.cancel:hover {
+    background: #275DF1;
+}
